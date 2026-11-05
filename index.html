@@ -177,8 +177,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .s-title sup{font-family:var(--mono);font-size:.2em;letter-spacing:0;vertical-align:super;color:var(--muted);margin-left:.3em}
 .s-title .serif{color:var(--accent)}
 .s-sub{max-width:380px;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.reveal.in{opacity:1;transform:none}
+.reveal{opacity:0}
+.reveal.in{opacity:1;animation:rvUp 1s var(--ease) var(--d,0ms) backwards}
+@keyframes rvUp{from{opacity:0;translate:0 44px}to{opacity:1;translate:0 0}}
 
 /* tabs */
 .tabs{display:inline-flex;gap:4px;padding:4px;background:var(--bg-2);border-radius:999px;flex-wrap:wrap}
@@ -247,10 +248,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* process cards */
 .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,30px)}
 .note{perspective:1200px;aspect-ratio:1/1;cursor:pointer;text-align:left;transition:transform .5s var(--ease),opacity 1s var(--ease)}
-.note.reveal{transform:translateY(36px)}
-.note.reveal.in:nth-child(odd){transform:rotate(-1.6deg)}
-.note.reveal.in:nth-child(even){transform:rotate(1.4deg)}
-.note.reveal.in:hover{transform:rotate(0) translateY(-6px)}
+.note:nth-child(odd){transform:rotate(-1.6deg)}
+.note:nth-child(even){transform:rotate(1.4deg)}
+.note:hover{transform:rotate(0) translateY(-6px)}
+.note.reveal.in{animation-name:rvNote}
+@keyframes rvNote{from{opacity:0;translate:0 70px;rotate:-6deg}to{opacity:1;translate:0 0;rotate:0deg}}
 .note-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s var(--ease)}
 .note.flipped .note-in{transform:rotateY(180deg)}
 .note-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:6px 6px 26px 6px;padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;justify-content:space-between;color:#15120F;box-shadow:0 22px 40px -24px rgba(0,0,0,.35)}
@@ -353,6 +355,33 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .lightbox img{max-width:100%;max-height:100%;border-radius:10px}
 body.locked{overflow:hidden}
 
+
+/* ---------- scroll animations ---------- */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent);transform-origin:0 50%;scale:var(--sp,0) 1;z-index:70;pointer-events:none}
+/* split-word headline reveal */
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .12em 0;margin:0 -.06em -.12em 0}
+.wd > span{display:inline-block;translate:0 110%;rotate:4deg;transform-origin:0 100%;transition:translate 1s var(--ease),rotate 1s var(--ease);transition-delay:calc(var(--i,0) * 45ms)}
+.wd-in .wd > span{translate:0 0;rotate:0deg}
+/* project stage: clip-open + image settle */
+.case .stage{clip-path:inset(10% 8% 10% 8% round var(--r));transition:clip-path 1.3s var(--ease) .1s}
+.case.in .stage{clip-path:inset(0 0 0 0 round var(--r))}
+.case .stage-main{scale:1.12;transition:scale 1.8s var(--ease) .1s}
+.case.in .stage-main{scale:1}
+.case .strip{opacity:0;translate:0 14px;transition:opacity .8s var(--ease) .6s,translate .8s var(--ease) .6s}
+.case.in .strip{opacity:1;translate:0 0}
+/* hero drifts away as you scroll */
+.hero{opacity:calc(1 - var(--hp,0) * .7)}
+.hero h1{translate:0 calc(var(--hp,0) * -70px);scale:calc(1 - var(--hp,0) * .08)}
+.hero .hello,.hero-sub,.hero-cta{translate:0 calc(var(--hp,0) * -40px)}
+.trust{translate:0 calc(var(--hp,0) * -110px)}
+/* parallax photos */
+.about-photos img{scale:1.16;translate:0 var(--py,0px)}
+/* marquee leans with scroll speed */
+.marquee-track span{display:inline-block;transform:skewX(var(--skew,0deg));transition:transform .25s linear}
+/* zoom-in for big blocks */
+.reveal.zoom.in{animation-name:rvZoom}
+@keyframes rvZoom{from{opacity:0;scale:.9}to{opacity:1;scale:1}}
+
 /* responsive */
 @media (max-width:1024px){
   .nav-links,.nav .btn{display:none}
@@ -382,12 +411,17 @@ body.locked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .w,.reveal,.fade{transform:none;opacity:1;filter:none}
+  .case .stage{clip-path:none}
+  .case .stage-main{scale:1}
+  .case .strip{opacity:1;translate:0 0}
+  .hero,.hero *{translate:none!important;scale:none!important;opacity:1}
 }
 </style>
 </head>
 <body>
 
 <a href="#work" class="sr-only">Skip to work</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <a href="#top" class="brand" aria-label="Toby Studio — back to top"><span class="logo-mark">TS</span><span class="brand-name">Toby Studio</span></a>
@@ -471,13 +505,13 @@ body.locked{overflow:hidden}
       <h2 class="s-title">Launch fast. <span class="serif">Look premium.</span></h2>
       <p class="s-sub">Need a website live this month, not next quarter? I combine real design craft with AI to ship polished, responsive, SEO-ready websites in a fraction of the usual time. Every site below is live — tap to explore.</p>
     </div>
-    <div class="ai-flow reveal">
+    <div class="ai-flow stagger">
       <div class="ai-step"><span class="mono">01</span><h4>Strategy</h4><p>We pin down your audience, your offer and the one action you want visitors to take.</p></div>
       <div class="ai-step"><span class="mono">02</span><h4>AI build</h4><p>AI speeds up layouts, copy drafts and assets — my design eye steers every decision.</p></div>
       <div class="ai-step"><span class="mono">03</span><h4>Hand-polish</h4><p>Typography, spacing, motion and mobile, refined until it feels custom, not templated.</p></div>
       <div class="ai-step"><span class="mono">04</span><h4>Launch</h4><p>A fast, live website on your domain, ready to share with customers.</p></div>
     </div>
-    <div class="ai-grid reveal" id="aiGrid"></div>
+    <div class="ai-grid stagger" id="aiGrid"></div>
     <div class="more-wrap reveal"><a href="mailto:adelanitobilobajulius@gmail.com?subject=AI%20website%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-accent">Get my AI-built website <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a></div>
   </div>
 </section>
@@ -567,7 +601,7 @@ body.locked{overflow:hidden}
 
 <!-- CONTACT -->
 <section id="contact" class="wrap">
-  <div class="cta reveal">
+  <div class="cta reveal zoom">
     <div class="cta-blob" aria-hidden="true"></div>
     <h2>Ready to turn visitors into <span class="serif">clients?</span></h2>
     <p>Tell me about your project and what you want it to achieve. I'll reply personally with ideas, next steps and a clear proposal — no obligation.</p>
@@ -577,7 +611,7 @@ body.locked{overflow:hidden}
       <a class="cta-mail" href="mailto:adelanitobilobajulius@gmail.com">adelanitobilobajulius@gmail.com</a>
     </div>
   </div>
-  <div class="socials reveal">
+  <div class="socials stagger">
     <a href="https://x.com/Julious_design" target="_blank" rel="noopener noreferrer">Twitter / X <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
     <a href="https://www.instagram.com/julious_design/" target="_blank" rel="noopener noreferrer">Instagram <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
     <a href="https://www.behance.net/adelanitobiloba" target="_blank" rel="noopener noreferrer">Behance <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
@@ -854,9 +888,74 @@ playGrid.innerHTML = playground.map(p => {
 const tCard = (t, hidden) => `<figure class="t-card"${hidden?' aria-hidden="true"':''}><q>${esc(t.q)}</q><figcaption class="t-who"><span class="t-av">${esc(t.n[0])}</span><span><b>${esc(t.n)}</b><span>${esc(t.r)}</span></span></figcaption></figure>`;
 $('#tTrack').innerHTML = testimonials.map(t => tCard(t)).join('') + testimonials.map(t => tCard(t, true)).join('');
 
+// ---------- Scroll animations ----------
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// split headings into words that slide up one after another
+function splitWords(el) {
+  let i = 0;
+  const walk = node => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(t => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) { frag.appendChild(document.createTextNode(t)); return; }
+          const w = document.createElement('span'); w.className = 'wd';
+          const inner = document.createElement('span'); inner.textContent = t; inner.style.setProperty('--i', i++);
+          w.appendChild(inner); frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1 && n.tagName !== 'SUP') walk(n);
+    });
+  };
+  walk(el);
+}
+if (!reduceMotion) $$('.s-title, .about-statement, .cta h2').forEach(el => { splitWords(el); el.classList.add('split'); });
+// stagger children of grids and lists
+$$('.stagger, #playGrid, #notes, .services, .faq-list').forEach(group => {
+  [...group.children].forEach((c, i) => {
+    if (c.classList.contains('services-title')) return;
+    c.classList.add('reveal');
+    c.style.setProperty('--d', `${Math.min(i, 8) * 80}ms`);
+  });
+});
+
 // ---------- Reveal / video ----------
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.1, rootMargin:'0px 0px -40px 0px'});
 $$('.reveal').forEach(el => io.observe(el));
+const wio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('wd-in'); wio.unobserve(e.target); } }), {threshold:.2});
+$$('.split').forEach(el => wio.observe(el));
+
+// scroll-linked effects (at most one update per frame)
+if (!reduceMotion) {
+  const root = document.documentElement, hero = $('.hero'), marquee = $('.marquee'), photos = $$('.about-photos figure');
+  let ticking = false, lastY = scrollY, skew = 0;
+  const update = () => {
+    const y = scrollY, vh = innerHeight;
+    root.style.setProperty('--sp', (y / Math.max(1, root.scrollHeight - vh)).toFixed(4));
+    hero.style.setProperty('--hp', Math.min(1, Math.max(0, y / (vh * .9))).toFixed(3));
+    photos.forEach((f, i) => {
+      const r = f.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      const t = (r.top + r.height / 2 - vh / 2) / vh;
+      f.style.setProperty('--py', `${(t * (i === 0 ? -40 : 60)).toFixed(1)}px`);
+    });
+    // safety net: anything already scrolled past is always shown, even after a fast jump
+    document.querySelectorAll('.reveal:not(.in), .split:not(.wd-in)').forEach(el => {
+      if (el.closest('[hidden]')) return;
+      if (el.getBoundingClientRect().top < vh) el.classList.add(el.classList.contains('split') ? 'wd-in' : 'in');
+    });
+    const v = y - lastY; lastY = y;
+    skew = Math.max(-10, Math.min(10, v * .35));
+    marquee.style.setProperty('--skew', `${(-skew).toFixed(2)}deg`);
+    ticking = false;
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, {passive:true});
+  addEventListener('resize', update);
+  // straighten the marquee once scrolling stops
+  setInterval(() => { if (scrollY === lastY && skew) { skew = 0; marquee.style.setProperty('--skew', '0deg'); } }, 150);
+  update();
+}
 const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; e.isIntersecting ? v.play().catch(()=>{}) : v.pause(); }), {threshold:.25});
 $$('video').forEach(v => vio.observe(v));
 
