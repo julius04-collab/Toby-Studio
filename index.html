@@ -135,7 +135,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .face:hover{width:1.9em}
 .face img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1) contrast(1.05);mix-blend-mode:multiply}
 .hl{background:var(--bg-2);border-radius:.18em;padding:0 .14em}
-.hero-sub{max-width:560px;margin:30px auto 0;font-size:clamp(16px,1.35vw,19px);color:var(--muted)}
+.hero-sub{margin:26px auto 0;font-size:clamp(14px,1.45vw,21px);color:var(--muted);white-space:nowrap}
 .chips{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin-top:24px;font-size:14px}
 .chips .lbl{color:var(--muted);margin-right:4px}
 .chip{padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);transition:transform .4s var(--ease),background .3s,color .3s}
@@ -367,6 +367,7 @@ body.locked{overflow:hidden}
 @media (max-width:640px){
   .hero{padding-top:120px;padding-bottom:64px}
   .hero h1{font-size:clamp(28px,10.3vw,64px)}
+  .hero-sub{font-size:min(15px,calc((100vw - 36px) / 24.5))}
   .notes{grid-template-columns:1fr}
   .note{aspect-ratio:4/3}
   .service{grid-template-columns:44px 1fr 36px;gap:1rem}
@@ -424,15 +425,12 @@ body.locked{overflow:hidden}
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hello fade"><span class="dot"></span><span><b>Toby Studio</b> · UI/UX &amp; AI website designer in Nigeria 🇳🇬</span></p>
+  <p class="hello fade"><span class="dot"></span><span><b>Toby Studio</b> · UI/UX &amp; AI web designer 🇳🇬</span></p>
   <h1>
     <span class="ln"><span class="w" style="transition-delay:.05s">Design</span> <span class="w face" style="transition-delay:.12s"><img src="./assets/img/headshot-800.webp" alt="" width="800" height="1067" fetchpriority="high" /></span> <span class="w" style="transition-delay:.18s">that turns</span></span>
     <span class="ln"><span class="w hl" style="transition-delay:.26s">visitors</span> <span class="w" style="transition-delay:.32s">into</span> <span class="w serif" style="transition-delay:.38s">clients.</span></span>
   </h1>
-  <p class="hero-sub fade">I'm Tobiloba. I design websites, landing pages and apps that look premium, feel effortless and make it easy for your customers to say <em>yes</em>. Need to launch fast? I build them with AI, too.</p>
-  <div class="chips fade">
-    <span class="chip">Website design</span><span class="chip">Landing pages</span><span class="chip">Mobile apps</span><span class="chip">UI/UX design</span><span class="chip">AI-built websites</span>
-  </div>
+  <p class="hero-sub fade">Premium websites &amp; apps that win you more customers.</p>
   <div class="hero-cta fade">
     <a href="mailto:adelanitobilobajulius@gmail.com?subject=Project%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-accent">Start your project
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -441,7 +439,6 @@ body.locked{overflow:hidden}
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M6 11l-4-4M6 11l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
     </a>
   </div>
-  <p class="avail fade"><span class="dot"></span>Taking on new projects</p>
   <div class="trust fade">
     <span class="trust-lbl">Trusted by founders at</span>
     <ul><li>ECHOFORM™</li><li>Vaultify</li><li>Rooted Studio</li><li>Omooba Trad</li><li>Swiftdrop</li><li>Perfect Moment</li></ul>
@@ -517,7 +514,7 @@ body.locked{overflow:hidden}
       </div>
       <div class="about-photos reveal">
         <figure><img src="./assets/img/full-picture-800.webp" alt="Tobiloba Julius, UI/UX designer and founder of Toby Studio, in a studio portrait" loading="lazy" decoding="async" style="object-position:40% center" /><figcaption>Studio</figcaption></figure>
-        <figure><img src="./assets/img/secondpic-800.webp" alt="Tobiloba Julius outdoors in Osun, Nigeria" loading="lazy" decoding="async" style="object-position:center 30%" /><figcaption>Outside</figcaption></figure>
+        <figure><img src="./assets/img/outside-800.webp" alt="Tobiloba Julius, founder of Toby Studio, outdoors in a white shirt" loading="lazy" decoding="async" style="object-position:center 12%" /><figcaption>Outside</figcaption></figure>
         <figure><img src="./assets/img/mypic-800.webp" alt="Tobiloba Julius away from the screen" loading="lazy" decoding="async" /><figcaption>Off-screen</figcaption></figure>
       </div>
     </div>
@@ -536,7 +533,7 @@ body.locked{overflow:hidden}
   <div class="wrap">
     <div class="s-head reveal">
       <h2 class="s-title">Playground<span class="serif">.exe</span></h2>
-      <p class="s-sub">Not everything starts with a client brief. UI experiments and explorations where new ideas get tested first. Tap any shot to view it larger.</p>
+      <p class="s-sub">Not everything starts with a client brief. Explorations, works-in-progress and the everyday things that inspire the work. Tap any shot to view it larger.</p>
     </div>
     <div class="play-grid" id="playGrid"></div>
   </div>
@@ -640,14 +637,16 @@ const aiProjects = [
 
 // Playground — images, or Motionframe clips as { video:"./assets/video/clip.mp4", poster:"./assets/img/...webp" }
 const playground = [
-  { img:"./assets/img/randon-ui/macbook-pro-16-1-3-800.webp", full:"./assets/img/randon-ui/macbook-pro-16-1-3.webp", alt:"MacBook interface exploration" },
-  { img:"./assets/img/randon-ui/snapchat-1265570854.webp", alt:"Mobile app interaction" },
-  { img:"./assets/img/randon-ui/desktop-3-2-800.webp", full:"./assets/img/randon-ui/desktop-3-2.webp", alt:"Fintech dashboard layout" },
-  { img:"./assets/img/randon-ui/majeun-800.webp", full:"./assets/img/randon-ui/majeun.webp", alt:"Majeun food delivery mobile UI" },
-  { img:"./assets/img/randon-ui/20260321-140332-800.webp", full:"./assets/img/randon-ui/20260321-140332.webp", alt:"Creative interface composition" },
-  { img:"./assets/img/randon-ui/desktop-17-2-800.webp", full:"./assets/img/randon-ui/desktop-17-2.webp", alt:"Dark mode UI screen" },
-  { img:"./assets/img/randon-ui/frame-2147226175-1-800.webp", full:"./assets/img/randon-ui/frame-2147226175-1.webp", alt:"E-commerce mobile grid" },
-  { img:"./assets/img/randon-ui/snapchat-700927865.webp", alt:"Cultural fashion mobile screen" },
+  { img:"./assets/img/playground/royalty-builders-800.webp", full:"./assets/img/playground/royalty-builders.webp", alt:"Royalty Builders CRM sign-in screen design in Figma" },
+  { img:"./assets/img/playground/music-collage-800.webp", full:"./assets/img/playground/music-collage.webp", alt:"Music player UI exploration featuring BNXN tracks" },
+  { img:"./assets/img/playground/fitness-app-800.webp", full:"./assets/img/playground/fitness-app.webp", alt:"Dark fitness tracking app home screen design" },
+  { img:"./assets/img/playground/chess-win-800.webp", full:"./assets/img/playground/chess-win.webp", alt:"Chess.com win by dont-be-lazy, the designer's chess account" },
+  { img:"./assets/img/playground/zesta-app-800.webp", full:"./assets/img/playground/zesta-app.webp", alt:"Zesta citrus drinks app onboarding screens in Figma" },
+  { img:"./assets/img/playground/billboard-infinix-800.webp", full:"./assets/img/playground/billboard-infinix.webp", alt:"Infinix Note 60 billboard spotted in Osun, Nigeria" },
+  { img:"./assets/img/playground/dashboard-prototype-800.webp", full:"./assets/img/playground/dashboard-prototype.webp", alt:"Prototype wiring for a CRM dashboard navigation in Figma" },
+  { img:"./assets/img/playground/portrait-800.webp", full:"./assets/img/playground/portrait.webp", alt:"Black and white self-portrait of Tobiloba Julius" },
+  { img:"./assets/img/playground/chess-review-800.webp", full:"./assets/img/playground/chess-review.webp", alt:"Chess.com game review screen" },
+  { img:"./assets/img/playground/billboard-colgate-800.webp", full:"./assets/img/playground/billboard-colgate.webp", alt:"Colgate digital billboard against a cloudy sky in Nigeria" },
   { cta:true }
 ];
 
