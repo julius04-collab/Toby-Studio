@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://toby-studio-ten.vercel.app/sitemap.xml
