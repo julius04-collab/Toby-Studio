@@ -356,7 +356,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cs-next .mono{color:var(--muted)}
 .cs-next strong{display:block;font-size:clamp(28px,4vw,56px);font-weight:500;letter-spacing:-.04em;transition:color .3s}
 .cs-next button:hover strong{color:var(--accent)}
-.proto-link{margin-top:.75rem;height:40px;font-size:14px}
+.proto-link{height:40px;font-size:14px}
+.cs-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.cs-links:not(:has(a:not([hidden]))){display:none}
+.case-links{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center}
+.case-behance{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 .lightbox{position:fixed;inset:0;z-index:90;background:rgba(16,14,12,.94);display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s;cursor:zoom-out}
 .lightbox.active{opacity:1;visibility:visible;transition:opacity .35s}
 .lightbox img{max-width:100%;max-height:100%;border-radius:10px}
@@ -647,7 +651,10 @@ body.locked{overflow:hidden}
       <span class="mono" id="csTag"></span>
       <h2 id="csTitle"></h2>
       <p id="csDesc"></p>
-      <a id="csProto" class="btn btn-ghost proto-link" href="#" target="_blank" rel="noopener noreferrer" hidden>View prototype ↗</a>
+      <div class="cs-links">
+        <a id="csBehance" class="btn btn-accent proto-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Full case study on Behance ↗</a>
+        <a id="csProto" class="btn btn-ghost proto-link" href="#" target="_blank" rel="noopener noreferrer" hidden>View prototype ↗</a>
+      </div>
     </div>
     <button class="ov-close" data-close aria-label="Close case study"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
   </div>
@@ -710,6 +717,7 @@ const testimonials = [
 ];
 
 // Projects — order here is the order on the page. category: web | mobile | fintech
+// Add  behance:"https://www.behance.net/gallery/..."  to a project to show a "Full case study on Behance" button.
 const projectData = {
   echoform:{ title:"ECHOFORM™", label:"Website", tint:"#D9D3FA", category:"web", folder:"echoform",
     statement:"A booking website that takes creators from first visit to a booked studio session in a few clear steps.",
@@ -804,7 +812,7 @@ casesEl.innerHTML = keys.map((k, i) => {
       <span class="case-label mono"><b>${String(i+1).padStart(2,'0')}</b> ${esc(d.title)} · ${esc(d.label)}</span>
       <h3>${esc(d.statement)}</h3>
       <dl><dt>Deliverables</dt><dd>${esc(d.deliverables)}</dd><dt>Role</dt><dd>${esc(d.role)}</dd><dt>Screens</dt><dd>${d.images.length} sections</dd></dl>
-      <button type="button" class="case-open" data-open="${k}">View case study ${arrow}</button>
+      <div class="case-links"><button type="button" class="case-open" data-open="${k}">View case study ${arrow}</button>${d.behance ? `<a class="case-open case-behance" href="${esc(d.behance)}" target="_blank" rel="noopener noreferrer">Full story on Behance ${arrow}</a>` : ''}</div>
     </div>
     <div class="stage" style="--tint:${d.tint}">
       <button type="button" class="stage-main" data-open="${k}" data-i="0" aria-label="Open ${esc(d.title)} case study">
@@ -990,6 +998,7 @@ function openCaseStudy(key, startAt = 0) {
   $('#csTitle').textContent = d.title;
   $('#csDesc').textContent = d.statement;
   const proto = $('#csProto'); proto.hidden = !d.prototypeLink; if (d.prototypeLink) proto.href = d.prototypeLink;
+  const be = $('#csBehance'); be.hidden = !d.behance; if (d.behance) be.href = d.behance;
   $('#csImages').innerHTML = d.images.map((n, i) => `<img src="${img(d, n)}" alt="${esc(d.title)} — screen ${i+1}" ${i > startAt + 1 ? 'loading="lazy"' : ''} decoding="async" />`).join('');
   const next = keys[(keys.indexOf(key)+1) % keys.length];
   $('#csNextTitle').textContent = projectData[next].title;
