@@ -3,15 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Toby Studio — UI/UX & AI Web Design by Tobiloba Julius</title>
-<meta name="description" content="Toby Studio is the UI/UX and AI website design studio of Tobiloba Julius, crafting digital experiences people actually enjoy using." />
+<title>Toby Studio | UI/UX & AI Website Designer in Nigeria</title>
+<meta name="description" content="Toby Studio designs high-converting websites, landing pages and apps for founders and brands worldwide — plus fast AI-built websites. UI/UX designer Tobiloba Julius, Nigeria." />
 <meta name="theme-color" content="#F5F1E8" />
-<meta property="og:title" content="Toby Studio — UI/UX & AI Web Design" />
+<meta property="og:title" content="Toby Studio | Websites & apps that turn visitors into clients" />
 <meta property="og:site_name" content="Toby Studio" />
-<meta property="og:description" content="Designing things people actually enjoy using. UI/UX, landing pages, mobile apps and AI-built websites." />
+<meta property="og:description" content="UI/UX, website and landing page design by Tobiloba Julius — plus launch-ready AI-built websites. See the work and start your project." />
+<meta property="og:locale" content="en_NG" />
+<meta name="author" content="Tobiloba Julius" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 <meta property="og:image" content="./assets/img/og.jpg" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Toby Studio | Websites & apps that turn visitors into clients" />
+<meta name="twitter:description" content="UI/UX, website and landing page design — plus launch-ready AI-built websites." />
+<meta name="twitter:creator" content="@Julious_design" />
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Toby Studio", "description": "UI/UX design, website and landing page design, mobile app design and AI-built websites for founders, startups and brands.", "founder": {"@type": "Person", "name": "Tobiloba Julius", "jobTitle": "UI/UX & AI Website Designer"}, "email": "adelanitobilobajulius@gmail.com", "telephone": "+2348124084420", "address": {"@type": "PostalAddress", "addressRegion": "Osun", "addressCountry": "NG"}, "areaServed": "Worldwide", "knowsAbout": ["UI/UX design", "Website design", "Landing page design", "Mobile app design", "AI website development", "Prototyping"], "sameAs": ["https://x.com/Julious_design", "https://www.instagram.com/julious_design/", "https://www.behance.net/adelanitobiloba", "https://www.linkedin.com/in/tobiloba-julius/", "https://www.facebook.com/Julious.design"]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does Toby Studio do?", "acceptedAnswer": {"@type": "Answer", "text": "Toby Studio is the independent design studio of Tobiloba Julius. I design websites, landing pages, mobile apps and product interfaces (UI/UX), and I build launch-ready websites with AI when you need to go live fast."}}, {"@type": "Question", "name": "Do you work with clients outside Nigeria?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I'm based in Osun, Nigeria and work remotely with founders, startups and brands worldwide. Feedback, calls and handoff all happen online."}}, {"@type": "Question", "name": "How much does a website or app design cost?", "acceptedAnswer": {"@type": "Answer", "text": "Every project is scoped individually, because a single landing page and a full product are very different jobs. Share your goals, timeline and budget range, and I'll send a clear proposal with pricing before any work starts."}}, {"@type": "Question", "name": "How long does a project take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on scope. A focused landing page moves much faster than a multi-screen app. You'll get a realistic timeline upfront, and regular updates as we go."}}, {"@type": "Question", "name": "Can you build the website too, or only design it?", "acceptedAnswer": {"@type": "Answer", "text": "Both. I can hand your developers clean, developer-ready designs, or design and build the website with AI-powered tools so it's live and ready for customers."}}, {"@type": "Question", "name": "What do you need from me to get started?", "acceptedAnswer": {"@type": "Answer", "text": "A short brief: what you do, who it's for and what you want visitors to do. Examples of sites you like help too. Send it by email or WhatsApp and we'll take it from there."}}]}]</script>
 <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -113,10 +120,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mobile-menu nav a{display:block;font-size:clamp(40px,12vw,64px);letter-spacing:-.04em;line-height:1.1;padding:.15em 0;border-bottom:1px solid var(--line)}
 
 /* hero */
-.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px var(--pad) 90px;position:relative}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px var(--pad) 56px;position:relative}
 .hello{display:inline-flex;align-items:center;gap:.6rem;font-size:15px;color:var(--muted);margin-bottom:28px}
 .hello b{color:var(--fg);font-weight:500}
-.hero h1{font-weight:500;font-size:clamp(46px,min(7.8vw,13vh),124px);line-height:1.02;letter-spacing:-.055em;max-width:1200px}
+.hello > span:last-child{text-align:center}
+@media (max-width:640px){.hello{font-size:13px;max-width:300px}}
+.hero h1{font-weight:500;font-size:clamp(30px,min(8.1vw,15vh),132px);line-height:1.04;letter-spacing:-.055em}
+.hero h1 .ln{display:block;white-space:nowrap}
+.hero-sub em{font-family:var(--serif);font-size:1.12em;line-height:1;color:var(--fg)}
 .hero h1 .serif{color:var(--accent);letter-spacing:-.025em;padding-right:.03em}
 .w{display:inline-block;opacity:0;transform:translateY(.4em);filter:blur(8px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease),width .6s var(--ease)}
 .ready .w{opacity:1;transform:none;filter:none}
@@ -130,8 +141,25 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .chip{padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);transition:transform .4s var(--ease),background .3s,color .3s}
 .chip:hover{transform:translateY(-3px) rotate(-2deg);background:var(--fg);color:var(--bg)}
 .hero-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:34px}
-.hero-foot{position:absolute;left:var(--pad);right:var(--pad);bottom:28px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
-.hero-foot .avail{display:inline-flex;align-items:center;gap:.5rem}
+.avail{display:inline-flex;align-items:center;gap:.5rem;font-size:13px;color:var(--muted);margin-top:18px}
+.trust{margin-top:clamp(40px,6vh,72px);display:flex;flex-direction:column;align-items:center;gap:14px}
+.trust-lbl{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.trust ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px clamp(20px,3vw,44px)}
+.trust li{font-size:clamp(16px,1.5vw,21px);font-weight:600;letter-spacing:-.03em;color:var(--fg);opacity:.45;transition:opacity .3s}
+.trust li:hover{opacity:1}
+.u{color:var(--fg);border-bottom:1px solid var(--line-2)}
+.u:hover{color:var(--accent);border-color:var(--accent)}
+.services-title{font-family:var(--mono);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:22px 0 6px}
+.more-wrap{gap:.75rem;flex-wrap:wrap}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:start}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:22px 0;font-size:clamp(18px,1.6vw,22px);font-weight:500;letter-spacing:-.02em}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item .plus{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;transition:transform .4s var(--ease),background .3s,color .3s}
+.faq-item[open] .plus{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-item p{color:var(--muted);padding:0 48px 22px 0;max-width:640px}
+@media (max-width:1024px){.faq-grid{grid-template-columns:1fr}}
 .fade{opacity:0;transform:translateY(14px);transition:opacity 1s var(--ease) .45s,transform 1s var(--ease) .45s}
 .ready .fade{opacity:1;transform:none}
 
@@ -337,8 +365,8 @@ body.locked{overflow:hidden}
   .ai-flow{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
-  .hero{padding-top:120px;padding-bottom:110px}
-  .hero-foot{flex-direction:column;gap:.4rem}
+  .hero{padding-top:120px;padding-bottom:64px}
+  .hero h1{font-size:clamp(28px,10.3vw,64px)}
   .notes{grid-template-columns:1fr}
   .note{aspect-ratio:4/3}
   .service{grid-template-columns:44px 1fr 36px;gap:1rem}
@@ -367,7 +395,7 @@ body.locked{overflow:hidden}
     <a href="#ai">AI Websites</a>
     <a href="#process">Process</a>
     <a href="#about">About</a>
-    <a href="#playground">Playground</a>
+    <a href="#faq">FAQ</a>
   </nav>
   <div class="nav-right">
     <span class="nav-clock" title="My local time in Nigeria">NG <span id="clock">--:--</span></span>
@@ -375,7 +403,7 @@ body.locked{overflow:hidden}
       <svg class="theme-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="theme-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
-    <a href="#contact" class="btn btn-accent">Let's cook</a>
+    <a href="mailto:adelanitobilobajulius@gmail.com?subject=Project%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-accent">Start a project</a>
     <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><div><span></span><span></span></div></button>
   </div>
 </header>
@@ -386,8 +414,8 @@ body.locked{overflow:hidden}
     <a href="#ai">AI Websites</a>
     <a href="#process">Process</a>
     <a href="#about">About</a>
-    <a href="#playground">Playground</a>
-    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Start a project</a>
   </nav>
   <div class="footer-row"><span>adelanitobilobajulius@gmail.com</span><span>Osun, Nigeria</span></div>
 </div>
@@ -396,38 +424,34 @@ body.locked{overflow:hidden}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hello fade"><span class="dot"></span><span>Hi, I'm <b>Tobiloba</b> — founder of Toby Studio, product &amp; AI web designer from Nigeria 🇳🇬</span></div>
-  <h1 aria-label="Designing things people actually enjoy using.">
-    <span class="w" style="transition-delay:.05s">Designing</span>
-    <span class="w face" style="transition-delay:.12s"><img src="./assets/img/headshot-800.webp" alt="" width="800" height="1067" fetchpriority="high" /></span>
-    <span class="w" style="transition-delay:.18s">things</span><br/>
-    <span class="w" style="transition-delay:.24s">people</span>
-    <span class="w serif" style="transition-delay:.3s">actually</span><br/>
-    <span class="w hl" style="transition-delay:.36s">enjoy using.</span>
+  <p class="hello fade"><span class="dot"></span><span><b>Toby Studio</b> · UI/UX &amp; AI website designer in Nigeria 🇳🇬</span></p>
+  <h1>
+    <span class="ln"><span class="w" style="transition-delay:.05s">Design</span> <span class="w face" style="transition-delay:.12s"><img src="./assets/img/headshot-800.webp" alt="" width="800" height="1067" fetchpriority="high" /></span> <span class="w" style="transition-delay:.18s">that turns</span></span>
+    <span class="ln"><span class="w hl" style="transition-delay:.26s">visitors</span> <span class="w" style="transition-delay:.32s">into</span> <span class="w serif" style="transition-delay:.38s">clients.</span></span>
   </h1>
-  <p class="hero-sub fade">Interfaces, landing pages and AI-built websites shaped through motion, storytelling and the tiny details most people overlook.</p>
+  <p class="hero-sub fade">I'm Tobiloba. I design websites, landing pages and apps that look premium, feel effortless and make it easy for your customers to say <em>yes</em>. Need to launch fast? I build them with AI, too.</p>
   <div class="chips fade">
-    <span class="lbl">I do</span>
-    <span class="chip">UI/UX</span><span class="chip">Landing pages</span><span class="chip">Mobile apps</span><span class="chip">AI websites</span><span class="chip">Motion</span>
+    <span class="chip">Website design</span><span class="chip">Landing pages</span><span class="chip">Mobile apps</span><span class="chip">UI/UX design</span><span class="chip">AI-built websites</span>
   </div>
   <div class="hero-cta fade">
-    <a href="#work" class="btn btn-dark">Explore work
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M6 11l-4-4M6 11l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </a>
-    <a href="./Tobiloba_Julius_Resume.docx" download class="btn btn-ghost">Download CV
+    <a href="mailto:adelanitobilobajulius@gmail.com?subject=Project%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-accent">Start your project
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
     </a>
+    <a href="#work" class="btn btn-ghost">See the work
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v10M6 11l-4-4M6 11l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </a>
   </div>
-  <div class="hero-foot fade">
-    <span class="avail"><span class="dot"></span>Available for new projects</span>
-    <span>Scroll to explore ↓</span>
+  <p class="avail fade"><span class="dot"></span>Taking on new projects</p>
+  <div class="trust fade">
+    <span class="trust-lbl">Trusted by founders at</span>
+    <ul><li>ECHOFORM™</li><li>Vaultify</li><li>Rooted Studio</li><li>Omooba Trad</li><li>Swiftdrop</li><li>Perfect Moment</li></ul>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>UI/UX Design</span><i></i><span>AI Websites</span><i></i><span>Landing Pages</span><i></i><span>Mobile Apps</span><i></i><span>Motion</span><i></i>
-    <span>UI/UX Design</span><i></i><span>AI Websites</span><i></i><span>Landing Pages</span><i></i><span>Mobile Apps</span><i></i><span>Motion</span><i></i>
+    <span>Website Design</span><i></i><span>Landing Pages</span><i></i><span>UI/UX Design</span><i></i><span>Mobile Apps</span><i></i><span>AI-Built Websites</span><i></i>
+    <span>Website Design</span><i></i><span>Landing Pages</span><i></i><span>UI/UX Design</span><i></i><span>Mobile Apps</span><i></i><span>AI-Built Websites</span><i></i>
   </div>
 </div>
 
@@ -435,11 +459,11 @@ body.locked{overflow:hidden}
 <section class="section" id="work">
   <div class="wrap">
     <div class="s-head reveal">
-      <h2 class="s-title">Selected work<sup id="workCount"></sup></h2>
+      <div><h2 class="s-title">Work that <span class="serif">works.</span><sup id="workCount"></sup></h2><p class="s-sub" style="margin-top:1rem">Websites, landing pages and apps for founders in fintech, e-commerce, logistics and creative industries — each designed to build trust and drive action.</p></div>
       <div class="tabs" id="workTabs" role="tablist" aria-label="Filter projects"></div>
     </div>
     <div class="cases" id="cases"></div>
-    <div class="more-wrap"><button class="btn btn-ghost" id="moreBtn" hidden></button></div>
+    <div class="more-wrap"><button class="btn btn-ghost" id="moreBtn" hidden></button><a href="mailto:adelanitobilobajulius@gmail.com?subject=Project%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-dark">Want results like these? Let's talk <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a></div>
   </div>
 </section>
 
@@ -447,16 +471,17 @@ body.locked{overflow:hidden}
 <section class="section ai" id="ai">
   <div class="wrap">
     <div class="s-head reveal">
-      <h2 class="s-title">Prompt to <span class="serif">production.</span></h2>
-      <p class="s-sub">I also design and build websites with AI, pairing real design craft with modern AI tooling to launch faster without losing the details. Every site below is live — tap to visit.</p>
+      <h2 class="s-title">Launch fast. <span class="serif">Look premium.</span></h2>
+      <p class="s-sub">Need a website live this month, not next quarter? I combine real design craft with AI to ship polished, responsive, SEO-ready websites in a fraction of the usual time. Every site below is live — tap to explore.</p>
     </div>
     <div class="ai-flow reveal">
-      <div class="ai-step"><span class="mono">01</span><h4>Direction</h4><p>Moodboards, references and a clear visual system first.</p></div>
-      <div class="ai-step"><span class="mono">02</span><h4>Generate</h4><p>AI accelerates layouts, copy and assets, guided by taste.</p></div>
-      <div class="ai-step"><span class="mono">03</span><h4>Refine</h4><p>Every section hand-tuned: type, spacing, motion, responsiveness.</p></div>
-      <div class="ai-step"><span class="mono">04</span><h4>Ship</h4><p>Fast, live websites, ready for real users.</p></div>
+      <div class="ai-step"><span class="mono">01</span><h4>Strategy</h4><p>We pin down your audience, your offer and the one action you want visitors to take.</p></div>
+      <div class="ai-step"><span class="mono">02</span><h4>AI build</h4><p>AI speeds up layouts, copy drafts and assets — my design eye steers every decision.</p></div>
+      <div class="ai-step"><span class="mono">03</span><h4>Hand-polish</h4><p>Typography, spacing, motion and mobile, refined until it feels custom, not templated.</p></div>
+      <div class="ai-step"><span class="mono">04</span><h4>Launch</h4><p>A fast, live website on your domain, ready to share with customers.</p></div>
     </div>
     <div class="ai-grid reveal" id="aiGrid"></div>
+    <div class="more-wrap reveal"><a href="mailto:adelanitobilobajulius@gmail.com?subject=AI%20website%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-accent">Get my AI-built website <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a></div>
   </div>
 </section>
 
@@ -464,8 +489,8 @@ body.locked{overflow:hidden}
 <section class="section" id="process">
   <div class="wrap">
     <div class="s-head reveal">
-      <h2 class="s-title">How I <span class="serif">work.</span></h2>
-      <p class="s-sub">Every project starts with understanding the feeling before designing the interface. Tap a card to see what you get.</p>
+      <h2 class="s-title">A process with <span class="serif">no surprises.</span></h2>
+      <p class="s-sub">You always know what's happening, what's next and exactly what you're getting. Tap a card to see the deliverables at each step.</p>
     </div>
     <div class="notes" id="notes"></div>
     <div class="notes-actions reveal">
@@ -479,27 +504,29 @@ body.locked{overflow:hidden}
   <div class="wrap">
     <div class="about-grid">
       <div class="reveal">
-        <p class="about-statement">The designer behind the pixels. I start with the <span class="serif">feeling</span>, then design the interface.</p>
+        <h2 class="about-statement">Hi, I'm Tobiloba. I design for the <span class="serif">feeling</span> first, then the interface.</h2>
         <div class="about-body">
-          <p>I'm <strong>Tobiloba Julius</strong>. I design digital experiences that feel smooth, intentional and impossible to ignore, focused on UI/UX, interaction and storytelling.</p>
-          <p>Currently exploring motion, AI-powered web experiences, and the tiny details most people overlook. Based in Osun, Nigeria — working with clients worldwide.</p>
+          <p><strong>Toby Studio</strong> is my independent design studio. I help founders, startups and growing brands turn ideas into websites and apps that people trust, enjoy and act on.</p>
+          <p>From fintech and logistics to fashion and creative studios, I bring UI/UX, motion and AI together to move fast without cutting corners. You work directly with me — no account managers, no hand-offs. Based in Osun, Nigeria; working with clients worldwide.</p>
         </div>
         <div class="about-actions">
-          <a href="./Tobiloba_Julius_Resume.docx" download class="btn btn-dark">Download CV</a>
+          <a href="mailto:adelanitobilobajulius@gmail.com?subject=Project%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-dark">Work with me</a>
+          <a href="./Tobiloba_Julius_Resume.docx" download class="btn btn-ghost">Download CV</a>
           <a href="https://www.linkedin.com/in/tobiloba-julius/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
         </div>
       </div>
       <div class="about-photos reveal">
-        <figure><img src="./assets/img/full-picture-800.webp" alt="Tobiloba seated in a black and white studio portrait" loading="lazy" decoding="async" style="object-position:40% center" /><figcaption>Studio</figcaption></figure>
-        <figure><img src="./assets/img/secondpic-800.webp" alt="Tobiloba walking outdoors" loading="lazy" decoding="async" style="object-position:center 30%" /><figcaption>Outside</figcaption></figure>
-        <figure><img src="./assets/img/mypic-800.webp" alt="Tobiloba from behind in a patterned shirt" loading="lazy" decoding="async" /><figcaption>Off-screen</figcaption></figure>
+        <figure><img src="./assets/img/full-picture-800.webp" alt="Tobiloba Julius, UI/UX designer and founder of Toby Studio, in a studio portrait" loading="lazy" decoding="async" style="object-position:40% center" /><figcaption>Studio</figcaption></figure>
+        <figure><img src="./assets/img/secondpic-800.webp" alt="Tobiloba Julius outdoors in Osun, Nigeria" loading="lazy" decoding="async" style="object-position:center 30%" /><figcaption>Outside</figcaption></figure>
+        <figure><img src="./assets/img/mypic-800.webp" alt="Tobiloba Julius away from the screen" loading="lazy" decoding="async" /><figcaption>Off-screen</figcaption></figure>
       </div>
     </div>
     <div class="services">
-      <div class="service reveal"><span class="mono">(01)</span><h3>UI/UX Design</h3><p>Research-led product interfaces, flows and design systems for web and mobile.</p><span class="plus" aria-hidden="true">+</span></div>
-      <div class="service reveal"><span class="mono">(02)</span><h3>Websites &amp; Landing Pages</h3><p>High-converting marketing sites that look premium and load fast.</p><span class="plus" aria-hidden="true">+</span></div>
-      <div class="service reveal"><span class="mono">(03)</span><h3>AI Website Design</h3><p>Concept to live site, accelerated with AI and finished by hand.</p><span class="plus" aria-hidden="true">+</span></div>
-      <div class="service reveal"><span class="mono">(04)</span><h3>Motion &amp; Interaction</h3><p>Prototypes, transitions and motion pieces that make products feel alive.</p><span class="plus" aria-hidden="true">+</span></div>
+      <h2 class="services-title reveal">How I can help</h2>
+      <div class="service reveal"><span class="mono">(01)</span><h3>Website &amp; Landing Page Design</h3><p>Premium, conversion-focused websites that turn visitors into leads, sign-ups and sales.</p><span class="plus" aria-hidden="true">+</span></div>
+      <div class="service reveal"><span class="mono">(02)</span><h3>UI/UX &amp; App Design</h3><p>Intuitive product flows, interfaces and design systems for web and mobile apps.</p><span class="plus" aria-hidden="true">+</span></div>
+      <div class="service reveal"><span class="mono">(03)</span><h3>AI-Built Websites</h3><p>Go live fast with a polished, responsive website — AI speed, designer quality.</p><span class="plus" aria-hidden="true">+</span></div>
+      <div class="service reveal"><span class="mono">(04)</span><h3>Prototypes &amp; Motion</h3><p>Clickable prototypes and motion that sell your idea to users and investors before it's built.</p><span class="plus" aria-hidden="true">+</span></div>
     </div>
   </div>
 </section>
@@ -509,7 +536,7 @@ body.locked{overflow:hidden}
   <div class="wrap">
     <div class="s-head reveal">
       <h2 class="s-title">Playground<span class="serif">.exe</span></h2>
-      <p class="s-sub">Not everything starts with a wireframe. Experiments, explorations and motion pieces. Tap any shot to view it larger.</p>
+      <p class="s-sub">Not everything starts with a client brief. UI experiments and explorations where new ideas get tested first. Tap any shot to view it larger.</p>
     </div>
     <div class="play-grid" id="playGrid"></div>
   </div>
@@ -518,20 +545,38 @@ body.locked{overflow:hidden}
 <!-- TESTIMONIALS -->
 <section class="section" style="padding-top:0" aria-label="Testimonials">
   <div class="wrap">
-    <div class="s-head reveal"><h2 class="s-title">Kind <span class="serif">words.</span></h2></div>
+    <div class="s-head reveal"><h2 class="s-title">Don't take my <span class="serif">word for it.</span></h2><p class="s-sub">What founders say after working with Toby Studio.</p></div>
   </div>
   <div class="t-wrap reveal"><div class="t-track" id="tTrack"></div></div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="s-head reveal" style="flex-direction:column;align-items:flex-start">
+      <h2 class="s-title">Questions, <span class="serif">answered.</span></h2>
+      <p class="s-sub">Still unsure? <a href="https://wa.me/2348124084420" target="_blank" rel="noopener noreferrer" class="u">Message me on WhatsApp</a> and ask anything.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary><span>What does Toby Studio do?</span><span class="plus" aria-hidden="true">+</span></summary><p>Toby Studio is the independent design studio of Tobiloba Julius. I design websites, landing pages, mobile apps and product interfaces (UI/UX), and I build launch-ready websites with AI when you need to go live fast.</p></details>
+      <details class="faq-item reveal"><summary><span>Do you work with clients outside Nigeria?</span><span class="plus" aria-hidden="true">+</span></summary><p>Yes. I&#x27;m based in Osun, Nigeria and work remotely with founders, startups and brands worldwide. Feedback, calls and handoff all happen online.</p></details>
+      <details class="faq-item reveal"><summary><span>How much does a website or app design cost?</span><span class="plus" aria-hidden="true">+</span></summary><p>Every project is scoped individually, because a single landing page and a full product are very different jobs. Share your goals, timeline and budget range, and I&#x27;ll send a clear proposal with pricing before any work starts.</p></details>
+      <details class="faq-item reveal"><summary><span>How long does a project take?</span><span class="plus" aria-hidden="true">+</span></summary><p>It depends on scope. A focused landing page moves much faster than a multi-screen app. You&#x27;ll get a realistic timeline upfront, and regular updates as we go.</p></details>
+      <details class="faq-item reveal"><summary><span>Can you build the website too, or only design it?</span><span class="plus" aria-hidden="true">+</span></summary><p>Both. I can hand your developers clean, developer-ready designs, or design and build the website with AI-powered tools so it&#x27;s live and ready for customers.</p></details>
+      <details class="faq-item reveal"><summary><span>What do you need from me to get started?</span><span class="plus" aria-hidden="true">+</span></summary><p>A short brief: what you do, who it&#x27;s for and what you want visitors to do. Examples of sites you like help too. Send it by email or WhatsApp and we&#x27;ll take it from there.</p></details>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="wrap">
   <div class="cta reveal">
     <div class="cta-blob" aria-hidden="true"></div>
-    <h2>Let's build something <span class="serif">unforgettable.</span></h2>
-    <p>Got a project, idea, or wild concept in mind? Let's turn it into an experience people actually enjoy.</p>
+    <h2>Ready to turn visitors into <span class="serif">clients?</span></h2>
+    <p>Tell me about your project and what you want it to achieve. I'll reply personally with ideas, next steps and a clear proposal — no obligation.</p>
     <div class="cta-row">
-      <a href="mailto:adelanitobilobajulius@gmail.com" class="btn btn-accent">Start a project</a>
-      <a href="https://wa.me/2348124084420" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">WhatsApp</a>
+      <a href="mailto:adelanitobilobajulius@gmail.com?subject=Project%20enquiry%20%E2%80%94%20Toby%20Studio" class="btn btn-accent">Start your project <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <a href="https://wa.me/2348124084420?text=Hi%20Tobiloba%2C%20I%27d%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Chat on WhatsApp</a>
       <a class="cta-mail" href="mailto:adelanitobilobajulius@gmail.com">adelanitobilobajulius@gmail.com</a>
     </div>
   </div>
@@ -548,7 +593,7 @@ body.locked{overflow:hidden}
 
 <footer class="footer">
   <div class="wrap footer-row">
-    <span>Based in Osun, Nigeria · Available worldwide</span>
+    <span>Toby Studio — UI/UX &amp; AI website design · Osun, Nigeria · Working worldwide</span>
     <span>Toby Studio © 2026 — designed with zero lazy pixels.</span>
     <a href="#top">Back to top ↑</a>
   </div>
@@ -607,12 +652,12 @@ const playground = [
 ];
 
 const steps = [
-  { t:"Understand", d:"Goals, audience and the bigger picture before a single pixel.", get:["Discovery call","Goals & audience","Success metrics"] },
-  { t:"Research", d:"Competitors, behaviours and patterns that uncover opportunities.", get:["Competitor audit","User insights","Moodboard"] },
-  { t:"Structure", d:"Wireframes and flows for clarity and smooth navigation.", get:["User flows","Wireframes","Site map"] },
-  { t:"Identity", d:"Type, colour and components that give it personality.", get:["Visual direction","UI kit","Design system"] },
-  { t:"Bring to life", d:"Prototypes, motion and transitions that feel alive.", get:["Hi-fi screens","Interactive prototype","Motion specs"] },
-  { t:"Refine & ship", d:"Polishing every interaction until it feels effortless.", get:["Design QA","Dev handoff","Launch support"] }
+  { t:"Discover", d:"We get clear on your goals, your customers and what success looks like.", get:["Discovery call","Goals & audience","Success metrics"] },
+  { t:"Research", d:"I study your market and competitors to find where you can stand out.", get:["Competitor audit","User insights","Moodboard"] },
+  { t:"Structure", d:"Wireframes and flows that guide people to the action you want.", get:["User flows","Wireframes","Site map"] },
+  { t:"Design", d:"A visual identity and UI that makes your brand look as good as it is.", get:["Visual direction","UI kit","Design system"] },
+  { t:"Prototype", d:"Click through the real experience before a line of code is written.", get:["Hi-fi screens","Interactive prototype","Motion specs"] },
+  { t:"Launch", d:"Final polish, clean handoff and support as your product goes live.", get:["Design QA","Dev handoff","Launch support"] }
 ];
 
 const testimonials = [
@@ -627,40 +672,40 @@ const testimonials = [
 // Projects — order here is the order on the page. category: web | mobile | fintech
 const projectData = {
   echoform:{ title:"ECHOFORM™", label:"Website", tint:"#D9D3FA", category:"web", folder:"echoform",
-    statement:"Designed a studio booking experience for modern creators — from discovery to booked session in a few calm steps.",
+    statement:"A booking website that takes creators from first visit to a booked studio session in a few clear steps.",
     deliverables:"UI/UX design, Website design, Landing page", role:"UI/UX Designer",
     images:["hero-section","second-section","third-section","fourth-section","fifth-section","sixth-section","seventh-section","footer"] },
   omooba:{ title:"Omooba Trad", label:"Mobile app", tint:"#D6E9A8", category:"mobile", folder:"omooba",
-    statement:"Reimagined traditional African fashion shopping as a modern, culture-first mobile e-commerce app.",
+    statement:"A culture-first shopping app that makes buying traditional African fashion feel modern, simple and premium.",
     deliverables:"Mobile UI/UX, E-commerce, Cultural branding", role:"Product Designer",
     images:["casestudy-cover","onboarding-screens","home-flows","other-core-screens","footer"] },
   vaultify:{ title:"Vaultify", label:"Fintech", tint:"#D7E7FB", category:"fintech", folder:"vaultify",
-    statement:"Crafted a premium fintech landing page with a dark-mode-first, glassmorphism visual language.",
+    statement:"A fintech landing page built to earn trust in seconds — premium dark UI, clear value and a frictionless path to sign-up.",
     deliverables:"UI/UX design, Landing page, Visual design", role:"UI/UX Designer",
     images:["first","second","third","fourth","fifth","sixth","seventh","footer"] },
   aura:{ title:"AURA Studios", label:"Website", tint:"#E2DDD3", category:"web", folder:"aura-studios",
     prototypeLink:"https://www.figma.com/proto/SWoprlcPS71CmiBflXF5qD/Moodboard?node-id=1012-4654&t=UPXTzKXTqKYGCUO5-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A3",
-    statement:"Designed an immersive website for a creative photo studio that turns authentic moments into lasting memories.",
+    statement:"A cinematic photo-studio website that sells the feeling first, then guides visitors straight to booking a session.",
     deliverables:"Web design, Art direction, Interactive prototype", role:"UI/UX Designer",
     images:["first","second","third","fourth","fifth","sixth","seventh","eighth","nineth","tenth","footer"] },
   swiftdrop:{ title:"Swiftdrop", label:"Mobile app", tint:"#CFE8C8", category:"mobile", folder:"swiftdrop",
-    statement:"Simplified end-to-end package tracking into an intuitive delivery app focused on speed, trust and transparency.",
+    statement:"A delivery app that makes package tracking effortless, built around speed, trust and total transparency.",
     deliverables:"Product design, Logistics UI, Mobile app", role:"Product Designer",
     images:["logostics-hero-section-1","home-screen-onboarding","mobile-app-presnetation","order-tracking-screen","payment-address-management-screen","settings-screen"] },
   wildora:{ title:"Wildora", label:"Website", tint:"#E6DCC6", category:"web", folder:"wildora",
-    statement:"Built an immersive adventure-planning experience for modern explorers, from destinations to plans and pricing.",
+    statement:"A travel platform that turns browsing into booking, guiding explorers from inspiration to the right adventure plan.",
     deliverables:"UI/UX design, Travel, Landing page", role:"UI/UX Designer",
     images:["cover-1","hero-section-2","choose-next-adventure-3","built-for-explorers-who-want-more-4","your-journey-in-3-simple-steps-5","trending-destinations-6","stories-written-beyond-the-map-7","stats-8","adventure-plans-for-every-explorer-9","compare-adventure-plans-10","enhance-your-adventure-11","faq-section-12","cta-13","footer-14","after-footer-15"] },
   spark:{ title:"Spark", label:"Fintech", tint:"#D9D9E4", category:"fintech", folder:"spark",
-    statement:"Designed a clean fintech landing page with a modern dark-mode UI and clear product storytelling.",
+    statement:"A fintech landing page that explains a modern money app in seconds and moves visitors to download.",
     deliverables:"UI/UX design, Fintech, Landing page", role:"UI/UX Designer",
     images:["1","2","3","4","5","6","7","8","10"] },
   rooted:{ title:"Rooted Studio", label:"Website", tint:"#E7E0D2", category:"web", folder:"rooted-studio",
-    statement:"Designed a minimalist landing page that captures the studio's aesthetic and drives client inquiries.",
+    statement:"A minimalist landing page that captured the studio's aesthetic — the client reports inquiries doubled within a month of launch.",
     deliverables:"Web design, Minimalist UI", role:"UI/UX Designer",
     images:["hero-section","second","third","fourth","fifth","sixth","seventh","eighth","footer"] },
   swiftdrop_desktop:{ title:"Swiftdrop Desktop", label:"Web platform", tint:"#D3E9CC", category:"web", folder:"swiftdrop-desktop-version",
-    statement:"Extended Swiftdrop to desktop with tracking, pricing and support pages for logistics customers.",
+    statement:"A desktop platform that gives Swiftdrop customers tracking, pricing and support in one clear place.",
     deliverables:"Product design, Web platform, Logistics UI", role:"Product Designer",
     images:["herosection","how-it-works-1","features","pricing-page","about-us-page","help-support-page","contact-us-page"] }
 };
@@ -719,7 +764,7 @@ casesEl.innerHTML = keys.map((k, i) => {
       <span class="case-label mono"><b>${String(i+1).padStart(2,'0')}</b> ${esc(d.title)} · ${esc(d.label)}</span>
       <h3>${esc(d.statement)}</h3>
       <dl><dt>Deliverables</dt><dd>${esc(d.deliverables)}</dd><dt>Role</dt><dd>${esc(d.role)}</dd><dt>Screens</dt><dd>${d.images.length} sections</dd></dl>
-      <button type="button" class="case-open" data-open="${k}">Open case study ${arrow}</button>
+      <button type="button" class="case-open" data-open="${k}">View case study ${arrow}</button>
     </div>
     <div class="stage" style="--tint:${d.tint}">
       <button type="button" class="stage-main" data-open="${k}" data-i="0" aria-label="Open ${esc(d.title)} case study">
@@ -801,7 +846,7 @@ $('#flipAll').addEventListener('click', () => {
 // ---------- Playground ----------
 const playGrid = $('#playGrid');
 playGrid.innerHTML = playground.map(p => {
-  if (p.cta) return `<a class="play-item play-cta" href="https://x.com/Julious_design" target="_blank" rel="noopener noreferrer"><span class="mono">Explore more</span><span class="t">More experiments on Twitter / X</span>${arrow}</a>`;
+  if (p.cta) return `<a class="play-item play-cta" href="https://x.com/Julious_design" target="_blank" rel="noopener noreferrer"><span class="mono">Explore more</span><span class="t">See new experiments first on Twitter / X</span>${arrow}</a>`;
   if (p.video) return `<div class="play-item"><video src="${esc(p.video)}" ${p.poster?`poster="${esc(p.poster)}"`:''} muted loop playsinline preload="metadata"></video></div>`;
   return `<button type="button" class="play-item" data-full="${esc(p.full||p.img)}"><img src="${esc(p.img)}" alt="${esc(p.alt)}" loading="lazy" decoding="async" /></button>`;
 }).join('');
