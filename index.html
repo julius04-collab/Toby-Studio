@@ -306,6 +306,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .play-item:hover img{transform:scale(1.04)}
 .play-cta{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;padding:24px;background:var(--ink);color:var(--ink-fg);cursor:pointer;min-height:220px;transition:background .3s,color .3s}
 .play-cta:hover{background:var(--accent);color:#fff}
+.play-cta{column-span:all;-webkit-column-span:all;min-height:0;flex-direction:row;align-items:center;cursor:pointer;margin-top:4px;padding:26px 28px}
+.play-cta .t{flex:1}
 .play-cta .t{font-size:26px;letter-spacing:-.03em;line-height:1.05}
 @media (max-width:640px){.play-grid{columns:2;column-gap:10px}.play-item{margin-bottom:10px;border-radius:12px}.play-cta{min-height:0;padding:16px;gap:1rem}.play-cta .t{font-size:17px}}
 
@@ -686,16 +688,16 @@ const aiProjects = [
 
 // Playground — images, or Motionframe clips as { video:"./assets/video/clip.mp4", poster:"./assets/img/...webp" }
 const playground = [
+  { img:"./assets/img/playground/chess-win-800.webp", full:"./assets/img/playground/chess-win.webp", alt:"Chess.com win by dont-be-lazy, the designer's chess account" },
+  { img:"./assets/img/playground/billboard-colgate-800.webp", full:"./assets/img/playground/billboard-colgate.webp", alt:"Colgate digital billboard against a cloudy sky in Nigeria" },
   { img:"./assets/img/playground/royalty-builders-800.webp", full:"./assets/img/playground/royalty-builders.webp", alt:"Royalty Builders CRM sign-in screen design in Figma" },
   { img:"./assets/img/playground/music-collage-800.webp", full:"./assets/img/playground/music-collage.webp", alt:"Music player UI exploration featuring BNXN tracks" },
-  { img:"./assets/img/playground/fitness-app-800.webp", full:"./assets/img/playground/fitness-app.webp", alt:"Dark fitness tracking app home screen design" },
-  { img:"./assets/img/playground/chess-win-800.webp", full:"./assets/img/playground/chess-win.webp", alt:"Chess.com win by dont-be-lazy, the designer's chess account" },
   { img:"./assets/img/playground/zesta-app-800.webp", full:"./assets/img/playground/zesta-app.webp", alt:"Zesta citrus drinks app onboarding screens in Figma" },
-  { img:"./assets/img/playground/billboard-infinix-800.webp", full:"./assets/img/playground/billboard-infinix.webp", alt:"Infinix Note 60 billboard spotted in Osun, Nigeria" },
   { img:"./assets/img/playground/dashboard-prototype-800.webp", full:"./assets/img/playground/dashboard-prototype.webp", alt:"Prototype wiring for a CRM dashboard navigation in Figma" },
+  { img:"./assets/img/playground/fitness-app-800.webp", full:"./assets/img/playground/fitness-app.webp", alt:"Dark fitness tracking app home screen design" },
   { img:"./assets/img/playground/portrait-800.webp", full:"./assets/img/playground/portrait.webp", alt:"Black and white self-portrait of Tobiloba Julius" },
   { img:"./assets/img/playground/chess-review-800.webp", full:"./assets/img/playground/chess-review.webp", alt:"Chess.com game review screen" },
-  { img:"./assets/img/playground/billboard-colgate-800.webp", full:"./assets/img/playground/billboard-colgate.webp", alt:"Colgate digital billboard against a cloudy sky in Nigeria" },
+  { img:"./assets/img/playground/billboard-infinix-800.webp", full:"./assets/img/playground/billboard-infinix.webp", alt:"Infinix Note 60 billboard spotted in Osun, Nigeria" },
   { cta:true }
 ];
 
